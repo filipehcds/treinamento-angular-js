@@ -1,0 +1,17 @@
+<div id="search-component">
+  <form class="form-inline">
+  	<label>Hero Search</label>
+  	<div class="input-container">
+  		<input ng-model="$ctrl.searchTerm" id="search-box" ng-keyup="$ctrl.search()" class="form-control" autocomplete="off" /> 
+	  	<div class="results-container" ng-if="$ctrl.showList">
+		  <ul class="search-results">
+		    <li ng-repeat="hero in $ctrl.heroes"
+		         ng-click="$ctrl.gotoDetail(hero)" class="search-result" >
+		      {{hero.name}}
+		    </li>
+		  </ul>
+	  	</div>
+  	</div>
+  </form>
+
+</div>

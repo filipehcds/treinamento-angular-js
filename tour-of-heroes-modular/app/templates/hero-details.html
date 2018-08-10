@@ -1,0 +1,20 @@
+
+<div ng-if="$ctrl.hero" class="container-fluid">
+	<h2>{{$ctrl.hero.name}} details!</h2>
+  <div>
+    <label>id:</label> <span>{{$ctrl.hero.id}}</span>
+  </div>
+  <div>
+    <label>Name: </label>
+    <span>{{$ctrl.hero.name}}</span>
+  </div>
+  <div ng-show="$ctrl.hero.location">
+    <label>Location: </label>
+    <span>{{$ctrl.hero.location}}</span>
+  </div>
+  <div class="buttons-container">
+	  <button ng-click="$ctrl.goBack()" class="btn btn-default">Back</button>
+	  <button ng-click="$ctrl.edit()" class="btn btn-primary">Edit</button>
+  </div>
+</div>
+<edit-hero-modal hero="$ctrl.hero" edit="$ctrl.isEdit" save="$ctrl.save('hero',hero)"></edit-hero-modal>

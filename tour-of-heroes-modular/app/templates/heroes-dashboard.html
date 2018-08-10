@@ -1,0 +1,26 @@
+<section class="search-hero-container container-fluid">
+	<hero-search></hero-search>
+</section>
+<section class="container-fluid">
+	<h3>Top Heroes</h3>
+	<div class="heroes-row row">
+	  <a ng-repeat="hero in $ctrl.topHeroes" ui-sref="hero-details({ id: hero.id })" class="hero-column col-sm-3 col-xs-6">
+	    <div class="module hero">
+	      <h4>{{hero.name}}</h4>
+	    </div>
+	  </a>
+	</div>
+</section>
+<section class="container-fluid">
+	<h3>New Heroes</h3>
+	<div class="heroes-row row">
+	  <a ng-repeat="hero in $ctrl.newHeroes" ui-sref="hero-details({ id: hero.id })" class="hero-column col-sm-3 col-xs-6">
+	    <div class="module hero">
+	      <h4>{{hero.name}}</h4>
+	    </div>
+	  </a>
+	</div>
+</section>
+<section class="add-hero-container container-fluid">
+	<hero-add on-save="$ctrl.add('hero',value)"></hero-add>
+</section>

@@ -1,0 +1,18 @@
+<section class="search-component">
+	<hero-search show-list="false" on-search="$ctrl.search(value)"></hero-search>
+</section>
+<section class="heroes-list">
+	<h2>My Heroes</h2>
+	<ul class="heroes">
+	   <li ng-repeat="hero in $ctrl.heroes" ng-class="{ selected: hero===$ctrl.selectedHero}" ng-click="$ctrl.onSelect(hero);">
+	   <span class="badge">{{ hero.id }}</span> <span class="hero-name">{{ hero.name }}</span>  
+	   <button ng-click="$ctrl.delete(hero); $event.stopPropagation();" class="delete btn btn-danger">x</button> 
+	   </li>
+	</ul>
+	<div ng-if="$ctrl.selectedHero">
+	   <h2>
+	      {{$ctrl.selectedHero.name | uppercase}} is my hero
+	   </h2>
+	   <button ng-click="$ctrl.gotoDetail()" class="btn btn-primary">View Details</button>
+	</div>
+</section>
